@@ -58,14 +58,14 @@ export class Tab2Page {
         message: 'Creating Repository...'
       }).then(loading => {
         loading.present();
-        this.githubService.createRepository(this.formData).subscribe(
-          (response) => {
+        this.githubService.createRepository(this.formData).subscribe({
+          next: (response) => {
             console.log('Repository created successfully:', response);
             this.presentSuccessToast();
             this.router.navigate(['/tabs/tab1']);
             this.resetForm(); // Clear the form on successful submission
           },
-          (error) => {
+          error: error => {
             console.error('Error creating repository:', error);
             if (error.status === 422) {
               // Check if the error is due to the repository name already existing
@@ -74,7 +74,7 @@ export class Tab2Page {
               this.presentErrorToast('Error creating repository. Please try again.');
             }
           }
-        ).add(() => {
+        }).add(() => {
           loading.dismiss();
         });
       });

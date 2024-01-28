@@ -8,9 +8,19 @@ import { ToastController, AlertController } from '@ionic/angular';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit {
+  /**
+   * Array to store user repositories.
+   * @type {any[]}
+   */
   repos: any[] = [];
 
-  // Inyecta el servicio GithubService, ToastController y AlertController
+  /**
+   * Constructor that injects GithubService, ToastController, and AlertController.
+   * @constructor
+   * @param {GithubService} githubService - The service for interacting with GitHub API.
+   * @param {ToastController} toastController - The controller for displaying toast messages.
+   * @param {AlertController} alertController - The controller for displaying alert dialogs.
+   */
   constructor(
     private githubService: GithubService,
     private toastController: ToastController,
@@ -18,14 +28,39 @@ export class Tab1Page implements OnInit {
   ) {}
 
   /**
-   * Inicializa el componente y recupera los repositorios del usuario.
+   * Initializes the component and retrieves the user's repositories.
+   * @method
+   * @name ngOnInit
+   * @public
    * @return {void}
    */
   ngOnInit(): void {
+    this.getRepositories();
+  }
+
+  /**
+   * Lifecycle event fired when the user navigates to the page.
+   * @method
+   * @name ionViewWillEnter
+   * @public
+   * @return {void}
+   */
+  ionViewWillEnter(): void {
+    this.getRepositories();
+  }
+
+  /**
+   * Retrieves the user's repositories using an HTTP GET request in order of creation.
+   * @method
+   * @name getRepositories
+   * @public
+   * @return {void}
+   */
+  getRepositories(): void {
     this.githubService.getUserRepos().subscribe({
-      next: data => {
-        this.repos = data
-        // console.log("Repos: ", this.repos);
+      next: (data) => {
+        this.repos = data;
+        console.log("Repos: ", this.repos);
       },
       error: error => {
         console.log("Error: ", error);
@@ -33,17 +68,19 @@ export class Tab1Page implements OnInit {
     })
   }
 
-
   /**
-   * Elimina un repositorio por su nombre después de confirmación del usuario.
-   * @param {any} repository - El objeto del repositorio a eliminar.
+   * Deletes a repository after user confirmation.
+   * @method
+   * @name deleteRepository
+   * @public
+   * @param {any} repository - The repository object to be deleted.
    * @return {void}
    */
   async deleteRepository(repository: any): Promise<void> {
     const repoName = repository.name;
     const owner = repository.owner.login;
 
-    // Presenta un cuadro de diálogo de confirmación
+    // Display a confirmation dialog
     const alert = await this.alertController.create({
       header: 'Confirm Deletion',
       message: `Please type the name of the repository "${repoName}" to confirm deletion.`,
@@ -68,19 +105,19 @@ export class Tab1Page implements OnInit {
             const confirmName = data.confirmName;
 
             if (confirmName === repoName) {
-              // Si el nombre coincide, procede con la eliminación
-              this.githubService.deleteRepository(owner, repoName).subscribe(
-                () => {
-                  // Eliminación exitosa, actualiza la lista de repositorios
-                  this.presentSuccessToast('Repository deleted successfully');
+              // If the name matches, proceed with deletion
+              this.githubService.deleteRepository(owner, repoName).subscribe({
+                next: () => {
+                  this.presentSuccessToast('Repository deleted successfully.');
+                  this.getRepositories();
                 },
-                (error) => {
+                error: (error) => {
                   console.error('Error deleting repository:', error);
                   this.presentErrorToast('Error deleting repository. Please try again.');
                 }
-              );
+              });
             } else {
-              // Si el nombre no coincide, muestra un mensaje de error
+              // If the name does not match, show an error message
               this.presentErrorToast('Repository name does not match. Deletion cancelled.');
             }
           }
@@ -92,8 +129,11 @@ export class Tab1Page implements OnInit {
   }
 
   /**
-   * Presenta un toast de éxito.
-   * @param {string} message - El mensaje del toast.
+   * Displays a success toast.
+   * @method
+   * @name presentSuccessToast
+   * @public
+   * @param {string} message - The message for the toast.
    * @return {void}
    */
   async presentSuccessToast(message: string): Promise<void> {
@@ -107,8 +147,11 @@ export class Tab1Page implements OnInit {
   }
 
   /**
-   * Presenta un toast de error.
-   * @param {string} message - El mensaje del toast.
+   * Displays an error toast.
+   * @method
+   * @name presentErrorToast
+   * @public
+   * @param {string} message - The message for the toast.
    * @return {void}
    */
   async presentErrorToast(message: string): Promise<void> {
@@ -121,7 +164,15 @@ export class Tab1Page implements OnInit {
     toast.present();
   }
 
-  handleRefresh(event:any) {
+  /**
+   * Handles the refresh event.
+   * @method
+   * @name handleRefresh
+   * @public
+   * @param {any} event - The refresh event.
+   * @return {void}
+   */
+  handleRefresh(event: any): void {
     setTimeout(() => {
       // Any calls to load data go here
       event.target.complete();

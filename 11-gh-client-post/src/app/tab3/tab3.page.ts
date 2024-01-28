@@ -16,11 +16,14 @@ export class Tab3Page implements OnInit{
    * @return {void}
    */
   ngOnInit(): void {
-      this.githubService.getUserInfo().subscribe(data => {
-        this.user = data
-        console.log("User: ", this.user);
-      }, error => {
-        console.log("Error: ", error);
+      this.githubService.getUserInfo().subscribe({
+        next: (data) => {
+          this.user = data
+          console.log("User: ", this.user);
+        },
+        error: (error) => {
+          console.log("Error: ", error);
+        }
       })
-  }
+  };
 }
