@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Ingresar nuevo registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<form (ngSubmit)="onSubmit()">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Titulo</ion-label>
+      <ion-input [(ngModel)]="formData.title" name="title" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Artista</ion-label>
+      <ion-input [(ngModel)]="formData.artist" name="artist" required></ion-input>
+
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Género</ion-label>
+      <ion-input [(ngModel)]="formData.genre" name="genre" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Url portada</ion-label>
+      <ion-input [(ngModel)]="formData.coverUrl" name="coverUrl" required></ion-input>
+
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" type="sumbit">Ingresar</ion-button>
+</form>
+</ion-content>

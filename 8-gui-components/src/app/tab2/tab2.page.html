@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Lista de álbums
+    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>La Oreja de Van Gogh</ion-card-title>
+      <ion-card-subtitle>Álbums más famosos</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Aquí empieza la lista -->
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="https://cdn-p.smehost.net/sites/f6af9ca1013642b0b1e7c56c9bb8a6fe/wp-content/uploads/2015/09/30132451/La_Oreja_De_Van_Gogh-El_Viaje_De_Copperpot-Frontal.jpg" alt="El viaje de Copperpot">
+          </ion-thumbnail>
+          <ion-label>El viaje de Copperpot</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="https://www.cromosomax.com/pics/2012/05/lodvg.jpg" alt="Cometas por el cielo">
+          </ion-thumbnail>
+          <ion-label>Cometas por el cielo</ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="https://upload.wikimedia.org/wikipedia/en/8/8b/El_Planeta_Imaginario.jpg" alt="El planeta imaginario">
+          </ion-thumbnail>
+          <ion-label>El planeta imaginario</ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img src="https://upload.wikimedia.org/wikipedia/en/d/df/La_Oreja_de_Van_Gogh_-_Un_susurro_en_la_tormenta.png" alt="Un susurro en la tormenta">
+        </ion-thumbnail>
+        <ion-label>Un susurro en la tormenta</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

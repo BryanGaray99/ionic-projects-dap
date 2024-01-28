@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Repositories
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="repos.length">
+    <ion-item *ngFor="let repository of repos">
+      <ion-thumbnail slot="start">
+        <img src="{{ repository.owner.avatar_url }}">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ repository.name }}</h2>
+        <h3>{{ repository.owner.login }}</h3>
+        <p>{{ repository.description }}</p>
+        <p>{{ repository.language }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="!repos.length"> No repositories found </div>
+</ion-content>

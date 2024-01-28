@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Formulario de datos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-input label="Name" placeholder="John Doe"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Age" placeholder="24" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Email" placeholder="john.doe@example.com" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Password" placeholder="Enter your password" type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Phone" placeholder="888-888-8888" type="tel"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button shape="round" color="primary" fill="outline" expand="block">
+    <ion-icon slot="start" name="send"></ion-icon>
+    Submit
+  </ion-button>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      {{ user.login }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img [alt]="user.name" [src]="user.avatar_url">
+  </ion-card>
+  <ion-card-header>
+    <ion-card-title>{{ user.name }}</ion-card-title>
+    <ion-card-subtitle>Cantidad de Repositorios {{ user.public_repos }}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <p>{{ user.bio }}</p>
+    <p>{{ user.location }}</p>
+  </ion-card-content>
+</ion-content>
