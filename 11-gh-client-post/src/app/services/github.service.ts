@@ -15,7 +15,7 @@ export class GithubService {
    * @return {Observable<any>} the observable of the HTTP GET request
    */
   getUserRepos(): Observable<any> {
-    const url = `${this.apiUrl}/user/repos?sort=created`;
+    const url = `${this.apiUrl}/user/repos?sort=created&per_page=15`;
     return this.http.get(url);
   }
 
@@ -27,4 +27,25 @@ export class GithubService {
   getUserInfo(): Observable<any> {
     return this.http.get(this.apiUrl + "/user");
   }
+
+  /**
+   * Endpoint for creating a new repository
+   * @param formData
+   * @returns
+   */
+  createRepository(formData: any): Observable<any> {
+    const url = `${this.apiUrl}/user/repos`;
+    return this.http.post(url, formData);
+  }
+
+    /**
+   * Elimina un repositorio por su nombre.
+   * @param {string} owner - El propietario del repositorio.
+   * @param {string} repo - El nombre del repositorio.
+   * @return {Observable<any>} - Observable que representa la respuesta de la solicitud HTTP.
+   */
+    deleteRepository(owner: string, repo: string): Observable<any> {
+      const url = `${this.apiUrl}/repos/${owner}/${repo}`;
+      return this.http.delete(url);
+    }
 }

@@ -10,6 +10,11 @@ export class Tab1Page implements OnInit {
   repos: any[] = [];
   constructor( private githubService: GithubService) {}
 
+  /**
+   * Initialize the component and retrieve user repositories.
+   *
+   * @return {void}
+   */
   ngOnInit(): void {
     this.githubService.getUserRepos().subscribe(data => {
       this.repos = data

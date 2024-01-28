@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Repositories
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing..."
+    >
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list *ngIf="repos.length">
+    <ion-item *ngFor="let repository of repos">
+      <ion-thumbnail slot="start">
+        <img src="{{ repository.owner.avatar_url }}">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ repository.name }}</h2>
+        <h3>{{ repository.owner.login }}</h3>
+        <p>{{ repository.description }}</p>
+        <p>{{ repository.language }}</p>
+      </ion-label>
+      <ion-button color="danger" (click)="deleteRepository(repository)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="!repos.length"> No repositories found </div>
+</ion-content>
