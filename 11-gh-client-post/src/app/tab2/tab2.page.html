@@ -10,14 +10,14 @@
   <form (ngSubmit)="onSubmit()">
     <ion-list>
       <ion-item>
-        <ion-input [(ngModel)]="formData.name" name="name" required label="Name"></ion-input>
+        <ion-input [(ngModel)]="formData.name" name="name" required label="Name" type="text"></ion-input>
       </ion-item>
       <ion-item *ngIf="!formData.name && formSubmitted">
         <ion-text color="danger">Name is required.</ion-text>
       </ion-item>
 
       <ion-item>
-        <ion-input [(ngModel)]="formData.description" name="description" required label="Description"></ion-input>
+        <ion-input [(ngModel)]="formData.description" name="description" required label="Description" type="text"></ion-input>
       </ion-item>
       <ion-item *ngIf="!formData.description && formSubmitted">
         <ion-text color="danger">Description is required.</ion-text>
