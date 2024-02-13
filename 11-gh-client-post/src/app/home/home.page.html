@@ -1,0 +1,14 @@
+<ion-content class="welcome-page ion-text-center" fullscreen>
+  <div class="welcome-content">
+    <ion-card class="profile-image" >
+      <ion-img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Github Logo"></ion-img>
+    </ion-card>
+    <ion-card-header>
+      <ion-card-title>Welcome, {{ user.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>This is a Github Ionic Client App in which you can list, create, delete, and update Github Repositories</p>
+    </ion-card-content>
+    <ion-button shape="round" color="primary" fill="outline" expand="block" (click)="continue()">Continue</ion-button>
+  </div>
+</ion-content>

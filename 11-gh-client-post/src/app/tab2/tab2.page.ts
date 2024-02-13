@@ -62,7 +62,7 @@ export class Tab2Page {
           next: (response) => {
             console.log('Repository created successfully:', response);
             this.presentSuccessToast();
-            this.router.navigate(['/tabs/tab1']);
+            this.router.navigate(['/tabs/tabs/tab1']);
             this.resetForm(); // Clear the form on successful submission
           },
           error: error => {

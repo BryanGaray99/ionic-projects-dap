@@ -6,16 +6,23 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
  */
 const routes: Routes = [
   {
-    // Define the default path, which will load the TabsPageModule lazily
     path: '',
+    redirectTo: 'home',  // Redirect to the home page by default
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+  },
+  {
+    path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
     path: 'edit-repository',
-    loadChildren: () => import('./edit-repo/edit-repo.module').then( m => m.EditRepoPageModule)
-  },
+    loadChildren: () => import('./edit-repo/edit-repo.module').then(m => m.EditRepoPageModule)
+  }
 ];
-
 
 // NgModule decorator for the AppRoutingModule class
 @NgModule({

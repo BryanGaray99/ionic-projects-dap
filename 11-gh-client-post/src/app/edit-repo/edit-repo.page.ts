@@ -107,7 +107,7 @@ export class EditRepoPage implements OnInit {
           next: (response) => {
             console.log('Repository updated successfully:', response);
             this.presentSuccessToast();
-            this.router.navigate(['/tabs/tab1']);
+            this.router.navigate(['/tabs/tabs/tab1']);
             this.resetForm(); // Clear the form on successful submission
           },
           error: error => {

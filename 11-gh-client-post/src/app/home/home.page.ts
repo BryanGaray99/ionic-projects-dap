@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GithubService } from '../services/github.service';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-home',
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
 })
-export class Tab3Page implements OnInit{
+export class HomePage implements OnInit {
   user: any = {};
 
   /**
    * Creates an instance of Tab2Page.
    * @constructor
    * @param {GithubService} githubService - The service for interacting with the GitHub API.
+   * @param {Router} router - The Angular router service.
    */
   constructor(
-    private githubService: GithubService
+    private githubService: GithubService,
+    private router: Router,
   ) {}
 
   /**
@@ -34,4 +37,8 @@ export class Tab3Page implements OnInit{
         }
       })
   };
+
+  continue() {
+    this.router.navigate(['/tabs/tabs/tab1']);
+  }
 }
