@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-// Define the routes for the application using the Routes interface from '@angular/router'
+/**
+ * Configuration of the application's routes.
+ */
 const routes: Routes = [
   {
     // Define the default path, which will load the TabsPageModule lazily
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  }
+  },
+  {
+    path: 'edit-repository',
+    loadChildren: () => import('./edit-repo/edit-repo.module').then( m => m.EditRepoPageModule)
+  },
 ];
+
 
 // NgModule decorator for the AppRoutingModule class
 @NgModule({

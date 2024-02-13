@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubService } from '../services/github.service';
 import { ToastController, AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -20,8 +21,10 @@ export class Tab1Page implements OnInit {
    * @param {GithubService} githubService - The service for interacting with GitHub API.
    * @param {ToastController} toastController - The controller for displaying toast messages.
    * @param {AlertController} alertController - The controller for displaying alert dialogs.
+   * @param {Router} router - The Angular router service.
    */
   constructor(
+    private router: Router,
     private githubService: GithubService,
     private toastController: ToastController,
     private alertController: AlertController
@@ -126,6 +129,20 @@ export class Tab1Page implements OnInit {
     });
 
     await alert.present();
+  }
+
+  /**
+   * Navigates to the page for creating a new album.
+   */
+  navigateToEditRepository(repository: any) {
+    this.router.navigate(['/edit-repository'], {
+      state: {
+        owner: repository.owner.login,
+        name: repository.name,
+        description: repository.description,
+        private: repository.private // Enviamos 'private' si el repositorio es privado, 'public' si es público
+      }
+    });
   }
 
   /**

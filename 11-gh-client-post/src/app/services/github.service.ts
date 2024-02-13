@@ -76,4 +76,19 @@ export class GithubService {
     const url = `${this.apiUrl}/repos/${owner}/${repo}`;
     return this.http.delete(url);
   }
+
+  /**
+   * Endpoint for updating a repository.
+   * @method
+   * @name updateRepository
+   * @param {string} owner - The owner of the repository.
+   * @param {string} repo - The name of the repository.
+   * @param {any} formData - The form data for updating the repository.
+   * @return {Observable<any>} - Observable representing the HTTP request response.
+   */
+  updateRepository(owner: string, repo: string, formData: any): Observable<any> {
+    const timestamp = new Date().getTime();
+    const url = `${this.apiUrl}/repos/${owner}/${repo}?cache=${timestamp}`;
+    return this.http.patch(url, formData);
+  }
 }

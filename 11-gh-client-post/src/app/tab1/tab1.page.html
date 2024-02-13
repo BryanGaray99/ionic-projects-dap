@@ -27,6 +27,9 @@
         <p>{{ repository.description }}</p>
         <p>{{ repository.language }}</p>
       </ion-label>
+      <ion-button color="warning" (click)="navigateToEditRepository(repository)">
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-button>
       <ion-button color="danger" (click)="deleteRepository(repository)">
         <ion-icon name="trash"></ion-icon>
       </ion-button>
