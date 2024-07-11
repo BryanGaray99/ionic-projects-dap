@@ -1,37 +1,41 @@
-# Repositorio de Laboratorios de Ionic
+# Ionic Projects Portfolio
 
-Este repositorio contiene varios proyectos de Ionic, cada uno correspondiente a un laboratorio específico. Cada laboratorio aborda un aspecto diferente del desarrollo con Ionic, desde la creación de componentes iniciales hasta la conexión con una API Rest.
+This repository contains various Ionic projects, each corresponding to a specific lab in the university course on Mobile Application Development. Each lab focuses on a different aspect of Ionic development, from creating initial components to connecting with a REST API.
 
-## Laboratorio 7: Creación de Componente Inicial
+## Component Creation and Setup
 
-En el laboratorio 7, aprenderás a crear el componente inicial en un proyecto Ionic. Se cubrirán los conceptos básicos de la estructura del proyecto y la creación de componentes esenciales.
+Learn the basics of creating and setting up components in an Ionic project. This lab covers the foundational concepts of project structure and essential component creation.
 
-## Laboratorio 8: Uso de Componentes GUI de Ionic
+## Utilizing Ionic GUI Components
 
-El laboratorio 8 se centra en el uso de componentes de interfaz de usuario (GUI) proporcionados por Ionic. Explorarás la variedad de componentes que Ionic ofrece para construir interfaces de usuario atractivas y funcionales.
+Explore the range of user interface (GUI) components provided by Ionic. This lab demonstrates how to build attractive and functional user interfaces using the diverse components available in Ionic.
 
-## Laboratorio 9: Ionic Storage
+## Implementing Ionic Storage
 
-En el laboratorio 9, te sumergirás en el uso de Ionic Storage. Aprenderás a utilizar el almacenamiento local en tu aplicación Ionic para guardar datos de manera persistente, mejorando así la experiencia del usuario.
+Delve into using Ionic Storage for local data persistence. This lab teaches how to store data locally in your Ionic application, enhancing the user experience by maintaining data across sessions.
 
-## Laboratorio 10: Conexión con API Rest en Ionic
+## Connecting to REST API with Ionic
 
-El laboratorio 10 se enfoca en la conexión con una API Rest en una aplicación Ionic. Cubrirás cómo realizar solicitudes HTTP, manejar respuestas y mostrar datos dinámicamente en tu aplicación desde una API externa.
+Focus on connecting your Ionic application to a REST API. This lab covers making HTTP requests, handling responses, and dynamically displaying data in your app from an external API.
 
-## Estructura del Repositorio
+## Comprehensive GitHub CRUD Application
 
-- **/lab-7-componente-inicial:** Proyecto correspondiente al laboratorio 7.
-- **/lab-8-componentes-gui:** Proyecto para el laboratorio 8.
-- **/lab-9-ionic-storage:** Proyecto que aborda el laboratorio 9 sobre Ionic Storage.
-- **/lab-10-api-rest-ionic:** Proyecto desarrollado para el laboratorio 10, centrado en la conexión con una API Rest en Ionic.
+Develop a modern application that integrates with the GitHub API for complete CRUD (Create, Read, Update, Delete) operations. This project allows users to view user data, list repositories, create new repositories with names and descriptions, update repository information, and delete repositories.
 
-## Instrucciones de Uso
+### Technologies and Libraries
 
-1. Clona este repositorio en tu máquina local:
+- **Languages:** TypeScript, SCSS, HTML, JavaScript, Java
+- **Frameworks:** Ionic, Angular
+- **Libraries:** HttpClientModule (Angular), Ionic Storage, Angular Forms, GitHub API integration
+- **Tools:** Visual Studio Code, Git
 
-   ```bash
-   git clone https://github.com/BryanGaray99/ionic-projects-dap.git
+## Repository Structure
 
+- **/component-creation-setup:** Project for component creation and setup.
+- **/using-ionic-gui-components:** Project demonstrating the use of Ionic GUI components.
+- **/implementing-ionic-storage:** Project focused on implementing Ionic Storage.
+- **/connecting-rest-api-ionic:** Project centered on connecting to a REST API with Ionic.
+- **/github-crud-application:** Comprehensive CRUD application with GitHub API integration.
 ## Author: Bryan Garay
 
 ## Email: bryangarayacademico@gmail.com
