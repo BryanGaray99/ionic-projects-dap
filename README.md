@@ -6,11 +6,11 @@ This repository contains various Ionic projects, each corresponding to a specifi
 
 Learn the basics of creating and setting up components in an Ionic project. This lab covers the foundational concepts of project structure and essential component creation.
 
-## 2. Utilizing Ionic GUI Components
+## 2. Ionic GUI Components
 
 Explore the range of user interface (GUI) components provided by Ionic. This lab demonstrates how to build attractive and functional user interfaces using the diverse components available in Ionic.
 
-## 3. Implementing Ionic Storage
+## 3. Ionic Storage
 
 Delve into using Ionic Storage for local data persistence. This lab teaches how to store data locally in your Ionic application, enhancing the user experience by maintaining data across sessions.
 
@@ -18,7 +18,7 @@ Delve into using Ionic Storage for local data persistence. This lab teaches how 
 
 Focus on connecting your Ionic application to a REST API. This lab covers making HTTP requests, handling responses, and dynamically displaying data in your app from an external API.
 
-## 5. Comprehensive GitHub CRUD Application
+## 5. GitHub CRUD Application
 
 Develop a modern application that integrates with the GitHub API for complete CRUD (Create, Read, Update, Delete) operations. This project allows users to view user data, list repositories, create new repositories with names and descriptions, update repository information, and delete repositories.
 
@@ -31,11 +31,12 @@ Develop a modern application that integrates with the GitHub API for complete CR
 
 ## Repository Structure
 
-- **/component-creation-setup:** Project for component creation and setup.
-- **/using-ionic-gui-components:** Project demonstrating the use of Ionic GUI components.
-- **/implementing-ionic-storage:** Project focused on implementing Ionic Storage.
-- **/connecting-rest-api-ionic:** Project centered on connecting to a REST API with Ionic.
-- **/github-crud-application:** Comprehensive CRUD application with GitHub API integration.
+- **/1_Component_Creation_Setup:** Project for component creation and setup.
+- **/2_Ionic_GUI_Components:** Project demonstrating the use of Ionic GUI components.
+- **/3_Ionic_Storage:** Project focused on implementing Ionic Storage.
+- **/4_Connecting_REST_API_Ionic:** Project centered on connecting to a REST API with Ionic.
+- **/5_GitHub_CRUD_Application:** Comprehensive CRUD application with GitHub API integration.
+
 ## Author: Bryan Garay
 
 ## Email: bryangarayacademico@gmail.com
